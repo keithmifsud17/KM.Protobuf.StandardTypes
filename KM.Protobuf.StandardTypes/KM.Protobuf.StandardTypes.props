@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+	<PropertyGroup>
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
 
 		<Protobuf_KMStandardTypesImportsPath>$( [System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)native/include) )</Protobuf_KMStandardTypesImportsPath>
 	</PropertyGroup>
 
-  <ItemGroup>
-		<Protobuf 
-			Include="$(Protobuf_KMStandardTypesImportsPath)/**/*.proto" 
+	<ItemGroup>
+		<Protobuf
+			Include="$(Protobuf_KMStandardTypesImportsPath)/**/*.proto"
 			ProtoRoot="$(Protobuf_KMStandardTypesImportsPath)"
 			GrpcServices="None"
 			ProtoCompile="false" />
-  </ItemGroup>	
+	</ItemGroup>
 </Project>
