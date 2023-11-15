@@ -6,7 +6,7 @@ using var channel = GrpcChannel.ForAddress("https://localhost:7125");
 var client = new WeatherForcaster.WeatherForcasterClient(channel);
 
 var reply = await client.GetTemperatureAsync(new GetTemperatureRequest { Unit = UnitOfTemperature.Celsius });
-Console.WriteLine("Current Temperature is {0}", reply.Temperature.Temperature_);
+Console.WriteLine("Current Temperature is {0}", reply.Temperature.Value);
 
 Console.WriteLine("Shutting down");
 Console.WriteLine("Press any key to exit...");

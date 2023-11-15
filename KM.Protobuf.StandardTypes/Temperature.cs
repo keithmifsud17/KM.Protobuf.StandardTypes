@@ -9,21 +9,21 @@ namespace KM.Protobuf.StandardTypes
             return new Temperature
             {
                 Unit = unitOfTemperature,
-                Temperature_ = (Unit, unitOfTemperature) switch
+                Value = (Unit, unitOfTemperature) switch
                 {
-                    (UnitOfTemperature.Unspecified, UnitOfTemperature.Unspecified) => Temperature_,
-                    (UnitOfTemperature.Celsius, UnitOfTemperature.Celsius) => Temperature_,
-                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Fahrenheit) => Temperature_,
-                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Kelvin) => Temperature_,
+                    (UnitOfTemperature.Unspecified, UnitOfTemperature.Unspecified) => Value,
+                    (UnitOfTemperature.Celsius, UnitOfTemperature.Celsius) => Value,
+                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Fahrenheit) => Value,
+                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Kelvin) => Value,
 
-                    (UnitOfTemperature.Celsius, UnitOfTemperature.Fahrenheit) => (Temperature_ * 9f) / 5f + 32f,
-                    (UnitOfTemperature.Celsius, UnitOfTemperature.Kelvin) => Temperature_ + 273.15f,
+                    (UnitOfTemperature.Celsius, UnitOfTemperature.Fahrenheit) => (Value * 9f) / 5f + 32f,
+                    (UnitOfTemperature.Celsius, UnitOfTemperature.Kelvin) => Value + 273.15f,
 
-                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Celsius) => (Temperature_ - 32f) * 5f / 9f,
-                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Kelvin) => ((Temperature_ - 32f) * 5f / 9f) + 273.15f,
+                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Celsius) => (Value - 32f) * 5f / 9f,
+                    (UnitOfTemperature.Fahrenheit, UnitOfTemperature.Kelvin) => ((Value - 32f) * 5f / 9f) + 273.15f,
 
-                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Celsius) => Temperature_ - 273.15f,
-                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Fahrenheit) => ((Temperature_ - 273.15f) * 9f) / 5f + 32f,
+                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Celsius) => Value - 273.15f,
+                    (UnitOfTemperature.Kelvin, UnitOfTemperature.Fahrenheit) => ((Value - 273.15f) * 9f) / 5f + 32f,
 
                     _ => throw new NotSupportedException(),
                 }

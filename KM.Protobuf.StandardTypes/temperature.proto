@@ -13,5 +13,5 @@ enum UnitOfTemperature {
 
 message Temperature {
     UnitOfTemperature unit = 1;
-    float temperature = 2;
+    float value = 2;
 }

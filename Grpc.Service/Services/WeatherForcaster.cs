@@ -21,7 +21,7 @@ namespace Grpc.Service.Services
                 Temperature = new Temperature
                 {
                     Unit = request.Unit,
-                    Temperature_ = Random.Shared.Next(0, 100)
+                    Value = Random.Shared.Next(0, 100)
                 }
             });
         }
