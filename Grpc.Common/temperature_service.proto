@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package weather;
+
+import "km/protobuf/temperature.proto";
+
+service WeatherForcaster {
+  rpc GetTemperature (GetTemperatureRequest) returns (GetTemperatureReply);
+}
+
+message GetTemperatureRequest {
+  km.protobuf.UnitOfTemperature unit = 1;
+}
+
+message GetTemperatureReply {
+  km.protobuf.Temperature temperature = 1;
+}

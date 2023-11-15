@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "KM.Protobuf.StandardTypes";
+
+package km.protobuf;
+
+enum UnitOfTemperature {
+    UNIT_OF_TEMPERATURE_UNSPECIFIED = 0;
+    UNIT_OF_TEMPERATURE_CELSIUS = 1;
+    UNIT_OF_TEMPERATURE_FAHRENHEIT = 2;
+    UNIT_OF_TEMPERATURE_KELVIN = 3;
+}
+
+message Temperature {
+    UnitOfTemperature unit = 1;
+    float temperature = 2;
+}
