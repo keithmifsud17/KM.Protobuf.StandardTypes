@@ -5,12 +5,4 @@
 
 		<Protobuf_KMStandardTypesImportsPath>$( [System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)native/include) )</Protobuf_KMStandardTypesImportsPath>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<Protobuf
-			Include="$(Protobuf_KMStandardTypesImportsPath)/**/*.proto"
-			ProtoRoot="$(Protobuf_KMStandardTypesImportsPath)"
-			GrpcServices="None"
-			ProtoCompile="false" />
-	</ItemGroup>
 </Project>
